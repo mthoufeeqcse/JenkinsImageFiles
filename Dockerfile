@@ -8,7 +8,6 @@ RUN apt-get update \
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 USER jenkins
-COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/install-plugins.sh git-client:latest git:latest job-dsl:latest
 
 USER root
